@@ -1,0 +1,18 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.message {
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.outgoing {
+  background-color: #e6e6e6;
+}
+
+.incoming {
+  background-color: #cc0040;
+  color: #fff;
+}

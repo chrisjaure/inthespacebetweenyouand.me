@@ -1,0 +1,120 @@
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #111;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  position: absolute;
+  margin: 1rem auto;
+  width: 350px;
+  background-color: #f2f2f2;
+  border-radius: 1rem;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (max-width: 40em) {
+  .app {
+    width: 90%;
+  }
+}
+
+.message-window {
+  flex-grow: 1;
+  overflow: auto;
+  padding: 1rem;
+  padding-bottom: 0;
+  background-color: #fff;
+  border-bottom: solid 1px #eee;
+}
+
+.outgoing, .incoming {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.incoming {
+  align-items: flex-start;
+}
+
+.outgoing {
+  align-items: flex-end;
+}
+
+.message {
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+  max-width: 80%;
+}
+
+.outgoing .message {
+  border-radius:0.75rem 0.25rem 0.25rem 0.75rem;
+  background-color: #e6e6e6;
+  color: #242424;
+}
+
+.outgoing .message:first-child {
+  border-top-right-radius: 0.75rem;
+}
+
+.outgoing .message:last-child {
+  border-bottom-right-radius: 0.75rem;
+}
+
+.incoming .message {
+  border-radius:0.25rem 0.75rem 0.75rem 0.25rem;
+  background-color: #cc0040;
+  color: #fff;
+}
+
+.incoming .message:first-child {
+  border-top-left-radius: 0.75rem;
+}
+
+.incoming .message:last-child {
+  border-bottom-left-radius: 0.75rem;
+}
+
+.input {
+  background-color: #fff;
+  border: solid 1px #eee;
+  border-radius: 1rem;
+  padding: 0.5rem .75rem;
+  margin: 1rem;
+}
+
+.cursor {
+  background-color: #005de8;
+  padding: 1px;
+  animation: 500ms infinite alternate blink;
+  opacity: 0;
+}
+

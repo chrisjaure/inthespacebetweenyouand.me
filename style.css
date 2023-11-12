@@ -13,13 +13,37 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 html {
   height: 100%;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
-  background-color: #111;
+  font-family: "Lato", sans-serif;
+  background-color: #111111;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -51,11 +75,12 @@ body {
   overflow: auto;
   padding: 1rem;
   padding-bottom: 0;
-  background-color: #fff;
-  border-bottom: solid 1px #eee;
+  background-color: #ffffff;
+  border-bottom: solid 1px #eeeeee;
 }
 
-.outgoing, .incoming {
+.outgoing,
+.incoming {
   display: flex;
   flex-direction: column;
   margin-bottom: 0.5rem;
@@ -76,8 +101,8 @@ body {
 }
 
 .outgoing .message {
-  border-radius:0.75rem 0.25rem 0.25rem 0.75rem;
-  background-color: #e6e6e6;
+  border-radius: 0.75rem 0.25rem 0.25rem 0.75rem;
+  background-color: #ebf4f7;
   color: #242424;
 }
 
@@ -90,9 +115,9 @@ body {
 }
 
 .incoming .message {
-  border-radius:0.25rem 0.75rem 0.75rem 0.25rem;
+  border-radius: 0.25rem 0.75rem 0.75rem 0.25rem;
   background-color: #cc0040;
-  color: #fff;
+  color: #ffffff;
 }
 
 .incoming .message:first-child {
@@ -104,10 +129,10 @@ body {
 }
 
 .input {
-  background-color: #fff;
-  border: solid 1px #eee;
+  background-color: #ffffff;
+  border: solid 1px #eeeeee;
   border-radius: 1rem;
-  padding: 0.5rem .75rem;
+  padding: 0.5rem 0.75rem;
   margin: 1rem;
 }
 
@@ -118,3 +143,32 @@ body {
   opacity: 0;
 }
 
+#scroll-to-latest {
+  display: none;
+  position: fixed;
+  background-color: #616161;
+  font-size: 2rem;
+  width: 44px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  bottom: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.1);
+  border: 0;
+  cursor: pointer;
+  animation-name: fadeIn;
+  animation-duration: 150ms;
+  animation-fill-mode: forwards;
+}
+
+#scroll-to-latest.hidden {
+  animation-name: fadeOut;
+}
+
+#scroll-to-latest > svg {
+  aspect-ratio: 1;
+  width: 65%;
+  vertical-align: middle;
+}

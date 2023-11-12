@@ -7,5 +7,5 @@ Edit this project in glitch: https://glitch.com/edit/#!/inthespacebetweenyouand-
 Use `generate-page.py` to take a conversation file and generate a new html file.
 
 ```bash
-python3 generate-page.py index.yml > output.html
+python3 generate-page.py conversations/index.yml > static/output.html
 ```

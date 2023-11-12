@@ -9,12 +9,12 @@ if not document:
   print("Please provide a conversation!")
   sys.exit()
 
-with open("conversations/{}".format(document)) as f:
+with open(document) as f:
   data = yaml.load(f, Loader=yaml.SafeLoader)
 
 with open("template.html") as f:
   template = f.read().encode('utf-8').decode('utf-8')
-  
+
 s = Template(template)
 conversation = ''
 
@@ -28,4 +28,9 @@ if 'messages' in data:
       conversation = conversation + '<div class="message">' + m + '</div>'
     conversation = conversation + '</div>'
 
-print(s.substitute(title=data['title'], input=data['input'], conversation=conversation).encode('utf-8').decode('utf-8'))
+print(
+  s.substitute(title=data['title'],
+  input=data['input'],
+  conversation=conversation
+).encode('utf-8').decode('utf-8'))
+

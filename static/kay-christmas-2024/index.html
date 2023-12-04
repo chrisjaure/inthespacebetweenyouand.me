@@ -19,6 +19,7 @@
         background-image: url("bg.jpeg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         height: 100vh;
         margin: 0;
         padding: 0;
@@ -47,8 +48,8 @@
       }
       @media (max-width: 479px) {
         .card {
-          left: calc(50% - 75px);
-          top: calc(50% - 107px);
+          left: calc(50% - 164.5px);
+          top: calc(50% - 115px);
         }
       }
       .card:before {
@@ -65,6 +66,9 @@
       .card.is-opened {
         transform: rotate(0deg) translate(175px, 0);
       }
+      .card.is-opened .cart-page-front {
+        transform: rotateY(-180deg);
+      }
       @media (max-width: 767px) {
         .card.is-opened {
           transform: rotate(0deg) translate(115px, 0);
@@ -72,11 +76,11 @@
       }
       @media (max-width: 479px) {
         .card.is-opened {
-          transform: rotate(0deg) translate(75px, 0);
+          transform: rotate(0deg) translate(0, 115px);
         }
-      }
-      .card.is-opened .cart-page-front {
-        transform: rotateY(-180deg);
+        .card.is-opened .cart-page-front {
+          transform: rotateX(180deg);
+        }
       }
 
       @-webkit-keyframes cardIn {
@@ -121,8 +125,8 @@
       @media (max-width: 479px) {
         .card,
         .card-page {
-          width: 150px;
-          height: 214px;
+          width: 329px;
+          height: 230px;
         }
       }
 
@@ -138,6 +142,13 @@
         transform-style: preserve-3d;
         transform: rotateY(-20deg);
         z-index: 2;
+      }
+
+      @media (max-width: 479px) {
+        .cart-page-front {
+          transform-origin: 50% 0 0;
+          transform: rotateX(20deg);
+        }
       }
 
       .cart-page-outside,
@@ -166,23 +177,9 @@
         background-color: #d4d1d0;
         background-image: url("pattern.png");
         border: 20px solid #d4d1d0;
-        display: -webkit-box;
-        display: -moz-box;
-        display: box;
-        display: -moz-flex;
         display: flex;
-        box-pack: center;
-        -moz-justify-content: center;
-        -ms-justify-content: center;
-        -o-justify-content: center;
         justify-content: center;
-        -ms-flex-pack: center;
-        box-align: center;
-        -moz-align-items: center;
-        -ms-align-items: center;
-        -o-align-items: center;
         align-items: center;
-        -ms-flex-align: center;
         text-align: center;
       }
       @media (max-width: 767px) {
@@ -238,8 +235,8 @@
         }
       }
       @media (max-width: 479px) {
-        .merry-christmas svg {
-          width: 150px;
+        .merry-christmas {
+          transform: rotate(160deg);
         }
       }
 
@@ -294,18 +291,13 @@
       p {
         font-family: "Mirza", Verdana, Arial, serif;
         font-size: 24px;
-        line-height: 1.2em;
+        line-height: 1.1em;
         padding-left: 10px;
         margin-bottom: 0;
       }
       @media (max-width: 767px) {
         p {
           font-size: 16px;
-        }
-      }
-      @media (max-width: 479px) {
-        p {
-          font-size: 10px;
         }
       }
     </style>
